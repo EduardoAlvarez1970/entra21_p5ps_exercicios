@@ -182,9 +182,9 @@ let idadeCandidato = parseInt(prompt('Digite sua idade'));
 let formaçãoCandidato = prompt('Digite sua formação');
 let cidadeCandidato = prompt('Digite onde mora');
 
-if (idadeCandidato >= 25 && idadeCandidato <= 50 && formaçãoCandidato == 'biologia' || formaçãoCandidato == 'ecologia' && cidadeCandidato == 'florianopolis') {
+if ((idadeCandidato >= 25 && idadeCandidato <= 50) && (formaçãoCandidato == 'biologia' || formaçãoCandidato == 'ecologia') && (cidadeCandidato == 'florianopolis')) {
     alert(nomeCandidato + ' ' + 'voce está apto para concorrer a vaga de Resgate');
-} else if (idadeCandidato >= 22 && idadeCandidato <= 60 && formaçãoCandidato == 'veterinaria' && cidadeCandidato == 'florianopolis' ) {
+} else if ((idadeCandidato >= 22 && idadeCandidato <= 60) && (formaçãoCandidato == 'veterinaria') && (cidadeCandidato == 'florianopolis') ) {
     alert(nomeCandidato + ' ' + 'voce está apto para concorrer a vaga de Tratamento'); 
 }
  else {
