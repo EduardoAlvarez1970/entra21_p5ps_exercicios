@@ -134,39 +134,33 @@ que solicite o valor da compra e a categoria de assinante
 (1, 2, 3 ou 4). Mostrar na tela o valor da compra de acordo
 com a opção escolhida.*/
 
-// NAO RESOLVIDO !!! //
 
 let valorFixoFrete = 12.50;
-let total = 0;
-
 let valorCompra = Number(prompt('Digite o valor da compra'));
 let categoriaAssinante = Number(prompt('Categoria assinante?' + ' ' + '(1, 2, 3 ou 4)'));
 
-let assPremium = total - (total / 10) - valorFixoFrete;
-let assGold = total - (total / 20) + valorFixoFrete;;
-let assSilver = total - (total / 10) + valorFixoFrete;;
+let assPremium = valorCompra - (valorCompra * (20 / 100));
+let assGold = valorCompra - (valorCompra * (20 / 100)) + valorFixoFrete;
+let assSilver = valorCompra - (valorCompra * (10 / 100)) + valorFixoFrete;
+let naoAssinante = valorCompra;
 
-switch(total) {
+switch(true) {
     case (categoriaAssinante == 1):
-        alert('')
+        alert('O valor da sua compra é ' + ' ' + assPremium)
         break;
 
     case (categoriaAssinante == 2):
-        alert('')
+        alert('O valor da sua compra é ' + ' ' + assGold)
         break;
 
     case (categoriaAssinante == 3):
-        alert('')
+        alert('O valor da sua compra é ' + ' ' + assSilver)
         break;
 
     default:
-        alert('')
+        alert('O valor da sua compra é ' + ' ' + naoAssinante)
         break;
 }
-
-
-
-
 
 /*6) Numa competição de arremesso de peteca, o competidor
 tem direito a 3 arremessos para que a peteca caia em um 
