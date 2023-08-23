@@ -191,7 +191,7 @@ if ((idadeCandidato >= 25 && idadeCandidato <= 50) && (formaçãoCandidato == 'b
     alert('Não apto a concorrer')
 }
 
-   
+   // TUDO RESOLVIDO //
 
 
 
