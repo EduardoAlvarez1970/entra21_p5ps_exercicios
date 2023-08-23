@@ -94,7 +94,6 @@ atualizado na tela. Na opção saldo, apenas mostrar o saldo atual
 na tela. Considere que um saque só pode ser realizado caso haja
 saldo suficiente. Criar uma variável com um valor que represente o saldo inicial.*/
 
-// NO RESUELTO !!!!  //
 
 let numeroConta = Number(prompt('Digite o numero da sua conta bancaria'));
 let tipoOperação = Number(prompt('Digite 1 para saldo; 2 para depósito; 3 para saque'));
@@ -107,13 +106,13 @@ var saldoAtualizado = (saldoInicial + deposito) - saque;
 
 switch(tipoOperação) {
     case 2:
-    deposito = deposito + Number(prompt('Digite valor a depositar'))
+    saldoAtualizado = saldoAtualizado + Number(prompt('Digite valor a depositar'))
     alert('Saldo atual: ' + ' ' + saldoAtualizado)
     break;
 
     case 3:
-    saque = saque - Number(prompt('Digite valor a sacar'))
-    if(saque > saldoAtualizado) {
+    saldoAtualizado = saldoAtualizado - Number(prompt('Digite valor a sacar'))
+    if(saldoAtualizado < 0) {
         alert('Operação invalida, saldo insuficiente!!')
     } else {
     alert('Saldo atual: ' + ' ' + saldoAtualizado)
