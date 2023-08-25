@@ -4,6 +4,24 @@ habitantes com uma taxa de crescimento de 1.5%. Faça um programa que calcule
 e escreva o número de anos necessários para que a população do país A ultrapasse
 ou iguale a população do país B, mantidas as taxas de crescimento.*/
 
+let populaçãoA = 80000;
+let taxaAnualA = 3 / 100; 
+
+let populaçãoB = 200000;
+let taxaAnualB = 1.5 / 100;
+
+let anos = 0;
+
+while (populaçãoA < populaçãoB) {
+   populaçãoA = populaçãoA + (populaçãoA * taxaAnualA);
+   populaçãoB = populaçãoB + (populaçãoB * taxaAnualB);
+   anos++;
+} 
+
+console.log("A população A tera " + ' ' + populaçãoA + ' ' + 'habitantes')
+console.log("A população B tera " + ' ' + populaçãoB + ' ' + 'habitantes')
+console.log("A população A tera " + ' ' + anos + ' ' + ' anos para alcanzar a populaçãoB')
+
 
 
 
@@ -13,10 +31,62 @@ Faça um programa que peça ao usuário para digitar um número e informe se ele
 Depois implemente um laço de repetição para solicitar cinco números inteiros e mostre
 na tela se são primos ou não.*/
 
+let numero = prompt('Digite um numero');
+
+if (numero == 0 || numero == 1) {
+    alert ('No es primo')
+} else if (numero == 2){
+    alert('Es primo');
+}
+
+let divisor = 2;
+
+
+    if(numero % divisor == 0 ) {
+        divisor++;
+        alert('No es primo');
+        break;
+    } else alert('Es primo');
+    break;
+
+    
+
+
+
+
+
+
+if (numero / numero == )
+
+
+
+alert('Es primo')
+
+alert('No es primo')
+
+let inicial = 0;
+
+if (inicial < 6) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*3) Faça um programa que gera uma lista dos números primos existentes entre 1 e um 
 número inteiro digitado pelo usuário.*/
+
+
+
 
 
 
@@ -32,6 +102,20 @@ d) A média de preço dos vinis.
 e) O vinil mais caro e o mais barato.*/
 
 
+let orçamento = 200;
+let nomeVinilo = prompt('Digite o nome do vinilo');
+let valorVinilo = prompt('Digite o valor do vinilo');
+
+let gastoTotal;
+let restoDinheiro = orçamento - gastoTotal;
+
+let totalVinilos;
+let mediaPrecioVinilos = gastoTotal / totalVinilos;
+
+let maisCaro;
+let maisBarato;
+
+
 
 
 /*5) Santa Catarina é conhecida por suas quatro estações bem definidas,o que o 
@@ -43,6 +127,27 @@ mostre os dados diários (segunda à sexta) e a média de amplitude térmica
 semanal, mostrando os resultados ao final. Exemplo: Digitar o nome da cidade
 ou estado, perguntar para os cinco dias da semana a maior temperatura do dia
 e a menor. Mostrar as amplitudes de cada dia e a média.*/
+
+let estado = prompt('Escolha o nome do estado');
+
+do {
+   let maiorTemp = prompt('Digite a Maior temperatura');
+   let menorTemp = prompt('Digite a Menor temperatura');
+}
+
+
+
+
+while(diaSemana < 5) {
+
+   alert('A maior e..' + ' ' + maiorTemp + ' ' + 'e a menor e...' + ' ' + menorTemp);
+
+}
+
+
+
+
+
 
 
 
