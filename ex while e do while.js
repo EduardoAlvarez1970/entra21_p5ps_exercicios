@@ -31,44 +31,36 @@ Faça um programa que peça ao usuário para digitar um número e informe se ele
 Depois implemente um laço de repetição para solicitar cinco números inteiros e mostre
 na tela se são primos ou não.*/
 
-let numero = prompt('Digite um numero');
-
-if (numero == 0 || numero == 1) {
-    alert ('No es primo')
-} else if (numero == 2){
-    alert('Es primo');
-}
+let numero = Number(prompt('Digite um numero'));
 
 let divisor = 2;
 
+/*if(numero < 2 && numero % divisor == 0) {
+   alert('No es primo')
+}*/
 
-    if(numero % divisor == 0 ) {
-        divisor++;
-        alert('No es primo');
-        break;
-    } else alert('Es primo');
-    break;
+while (divisor < numero) {
+   /*if (numero == 2) {
+      alert('Es primo')
+   }*/
+   
+   if (numero % divisor === 0){
+      alert('No es primo')
+   } 
+   divisor++;
+} 
+   
+   
+   
+
+
+
 
     
 
 
 
 
-
-
-if (numero / numero == )
-
-
-
-alert('Es primo')
-
-alert('No es primo')
-
-let inicial = 0;
-
-if (inicial < 6) {
-
-}
 
 
 
@@ -114,6 +106,8 @@ let mediaPrecioVinilos = gastoTotal / totalVinilos;
 
 let maisCaro;
 let maisBarato;
+
+
 
 
 
