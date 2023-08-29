@@ -144,17 +144,30 @@ e) O vinil mais caro e o mais barato.*/
 
 
 let orçamento = 200;
+
 let nomeVinilo = prompt('Digite o nome do vinilo');
 let valorVinilo = prompt('Digite o valor do vinilo');
 
-let gastoTotal;
-let restoDinheiro = orçamento - gastoTotal;
+let gastoParcial = 0;
+let gastoTotal = gastoParcial + valorVinilo;
 
-let totalVinilos;
-let mediaPrecioVinilos = gastoTotal / totalVinilos;
 
-let maisCaro;
-let maisBarato;
+//let restoDinheiro = orçamento - gastoTotal;//
+
+//let totalVinilos;//
+//let mediaPrecioVinilos = gastoTotal / totalVinilos;//
+
+//let maisCaro;//
+//let maisBarato;//
+
+while (gastoTotal <= orçamento) {
+     
+    if (gastoTotal > orçamento) {
+        break;
+    }
+   gastoTotal++
+}
+
 
 
 
