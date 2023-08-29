@@ -84,12 +84,52 @@ counter++
 /*3) Faça um programa que gera uma lista dos números primos existentes entre 1 e um 
 número inteiro digitado pelo usuário.*/
 
+// usuário digita o último número da sequência
+let numeroFinal = Number(prompt("Digite um número para criação da lista : "))
+
+//A sequência começa com 2 pq é o primeiro número primo. 
+//Caso comecemos com 1 provavelmente a verificação daria erro pois todos seriam considerados não primo
+
+let numeroAtual = 2;
 
 
+// iteração para a sequência inicial com a final ( isto é devemos iterar até atingir o numero final da lista)
+while (numeroAtual <= numeroFinal) {
+
+    //defino que todos os números são primos até uma certa condição.
+    let ehPrimo = true;
+    
+    // defino um divisor para verificar se é primo
+    let divisor = 2
 
 
+    // verificação se é primo - mudar o valor da variável boleana
+ do {
 
+    // pegamos o numero atual da sequência e dividimos pelo divisor, se o resto for igual a zero, eles são divisíveis então não é primo
+    if (numeroAtual % divisor === 0) {
 
+        ehPrimo = false;
+        break;
+    }
+
+    //incrementamos o divisor para um novo divisor ( 2->3 -> 4 ...)
+    divisor++
+    
+    // uma condição para continuar a executar este código, quando o divisor for menor que o número atual /2
+    // ( não precisamos verificar nenhum número que seja maior do que a metade do número atual, 
+    //pois qualquer divisor que seja maior que a metade do numero atual resultaria em uma quociente menor que 2 )
+    // todos os núemros pares são divisíveis por 2 e o 2 é uma exceção pq é um primo par.
+ 
+} while (divisor <= numeroAtual / 2);
+
+ if (ehPrimo) {
+    alert (`Esses número são primos : ${numeroAtual}`)
+    console.log(numeroAtual)
+}
+
+numeroAtual++
+}
 
 /*4) Você é um colecionador de vinis e resolveu ir ao sebo para comprar alguns vinis
 raros. Porém, você tem apenas R$200 para gastar. Faça um programa que pergunte o 
