@@ -49,52 +49,36 @@ if(primo) {
     alert("E primo")
   } else alert("nao e primo")
 
-
-
 /*Depois implemente um laço de repetição para solicitar cinco números inteiros e mostre
 na tela se são primos ou não.*/
 
-let num = Number(prompt('Digite um numero'));
+let counter = 1;
+while (counter < 6) {
 
-let divi = 2;
+  let numero = Number(prompt('digite um numero'))
+  let primo = true;
+  let contador = 0;
 
-/*if(num < 2 && num % divi == 0) {
-   alert('No es primo')
-}*/
+while (contador <= numero) {
 
-while (divi < num) {
-   /*if (numero == 2) {
-      alert('Es primo')
-   }*/
-   
-   if (num % divi === 0){
-      alert('No es primo')
-   } 
-   divi++;
+  if (numero == 0 || numero == 1) {
+      primo = false
+    }                                      
+  
+  if(contador > 1 && contador < numero) {
+      
+    if (numero % contador == 0)
+      primo = false
+  }
+  
+contador++               
 } 
-   
-   
-   
+if(primo) {
+  alert("E primo")
+} else alert("nao e primo")
 
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+counter++
+}
 
 
 /*3) Faça um programa que gera uma lista dos números primos existentes entre 1 e um 
