@@ -22,32 +22,55 @@ console.log("A população A tera " + ' ' + populaçãoA + ' ' + 'habitantes')
 console.log("A população B tera " + ' ' + populaçãoB + ' ' + 'habitantes')
 console.log("A população A tera " + ' ' + anos + ' ' + ' anos para alcanzar a populaçãoB')
 
-
-
-
 /*2) Os números primos possuem várias aplicações dentro da Computação, por exemplo,
 na criptografia. Um número primo é aquele que é divisível apenas por um e por ele mesmo.
-Faça um programa que peça ao usuário para digitar um número e informe se ele é primo.
-Depois implemente um laço de repetição para solicitar cinco números inteiros e mostre
+Faça um programa que peça ao usuário para digitar um número e informe se ele é primo.*/
+
+let numero = Number(prompt('digite um numero'))
+let primo = true;
+let contador = 0;
+
+while (contador <= numero) {
+
+    if (numero == 0 || numero == 1) {
+        primo = false
+      }
+    
+    if(contador > 1 && contador < numero) {
+        
+      if (numero % contador == 0)
+        primo = false
+    }
+    
+ contador++               
+} 
+  
+if(primo) {
+    alert("E primo")
+  } else alert("nao e primo")
+
+
+
+/*Depois implemente um laço de repetição para solicitar cinco números inteiros e mostre
 na tela se são primos ou não.*/
 
-let numero = Number(prompt('Digite um numero'));
+let num = Number(prompt('Digite um numero'));
 
-let divisor = 2;
+let divi = 2;
 
-/*if(numero < 2 && numero % divisor == 0) {
+/*if(num < 2 && num % divi == 0) {
    alert('No es primo')
 }*/
 
-while (divisor < numero) {
+while (divi < num) {
    /*if (numero == 2) {
       alert('Es primo')
    }*/
    
-   if (numero % divisor === 0){
+   if (num % divi === 0){
       alert('No es primo')
    } 
-   divisor++;
+   divi++;
 } 
    
    
@@ -76,6 +99,8 @@ while (divisor < numero) {
 
 /*3) Faça um programa que gera uma lista dos números primos existentes entre 1 e um 
 número inteiro digitado pelo usuário.*/
+
+
 
 
 
