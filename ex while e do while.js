@@ -142,51 +142,56 @@ c) Quantos vinis foram comprados.                !!!  FALTAN RESOLVER ALGUNAS CO
 d) A média de preço dos vinis.
 e) O vinil mais caro e o mais barato.*/
 
-
-let orçamento = 200;
-//let gastoParcial = 0;//
-let gastoTotal = 1;
+let orçamento = 200; 
+let gastoTotal = 0;
+let gastoParcial = 0;
 let totalVinilos = 0;
 let maisCaro = 0;
 let maisBarato = 0;
 let nomeVinilo;
 let valorVinilo;
+let i = 0;
 
-//let restoDinheiro = orçamento - gastoTotal;//
+while (gastoParcial < orçamento) {
 
-//let mediaPrecioVinilos = gastoTotal / totalVinilos;//
-
-while (gastoTotal <= orçamento) {
     nomeVinilo = prompt('Digite o nome do vinilo')
     valorVinilo = Number(prompt('Digite o valor do vinilo'));
-    gastoTotal = (gastoTotal + valorVinilo) - 1;
-    totalVinilos++
-    if (gastoTotal > orçamento) {
+    gastoTotal = gastoTotal + valorVinilo;
+    saldo = orçamento - gastoParcial;
+    totalVinilos++;
+
+    if (gastoTotal > 200) {                   
         alert(`Exede o orçamento`)
+
+            totalVinilos = totalVinilos - 1;
+            gastoTotal = gastoTotal - valorVinilo;
+
+             // Caso o valor ultrapasse R$200, encerrar (desconsiderando o último vinil) //
         break;
      }
-     gastoTotal++
-}
-
-if (valorVinilo > maisCaro){
-    maisCaro = valorVinilo
-}
-if (valorVinilo < maisBarato){
-    maisBarato = valorVinilo
+     
+     if (valorVinilo > 0 && valorVinilo < 200) {
+        maisCaro = valorVinilo;
+        maisBarato = valorVinilo;
+    }
+    
+    if (valorVinilo > maisCaro){
+        maisCaro = valorVinilo
+    }                                 // me esta tomando el ultimo valor, CORREGIRLO!!! //
+    if (valorVinilo < maisBarato){
+        maisBarato = valorVinilo
+    }
+     gastoParcial++
 }
  
 let valorSobrante = orçamento - gastoTotal;
 let mediaVinilo = gastoTotal / totalVinilos;
-
 
 alert(`El gasto total es ${gastoTotal}`)
 alert(`O valor que sobrou é: ${valorSobrante }`)
 alert(`A quantidade de vinilos compradas foi ${totalVinilos}`)
 alert(`A média de preço dos vinis foi: ${mediaVinilo}`)
 alert(`O vinilo mais caro foi ${maisCaro} e o mais barato foi ${maisBarato}`)
-
-
-
 
 
 
