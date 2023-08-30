@@ -138,35 +138,52 @@ nome do vinil e o valor, repetidamente. Caso o valor ultrapasse R$200, encerrar
 
 a) O total gasto em reais dos vinis.
 b) O valor que sobrou em dinheiro.
-c) Quantos vinis foram comprados.
+c) Quantos vinis foram comprados.                !!!  FALTAN RESOLVER ALGUNAS COSITAS   !!!!
 d) A média de preço dos vinis.
 e) O vinil mais caro e o mais barato.*/
 
 
 let orçamento = 200;
-
-let nomeVinilo = prompt('Digite o nome do vinilo');
-let valorVinilo = prompt('Digite o valor do vinilo');
-
-let gastoParcial = 0;
-let gastoTotal = gastoParcial + valorVinilo;
-
+//let gastoParcial = 0;//
+let gastoTotal = 1;
+let totalVinilos = 0;
+let maisCaro = 0;
+let maisBarato = 0;
+let nomeVinilo;
+let valorVinilo;
 
 //let restoDinheiro = orçamento - gastoTotal;//
 
-//let totalVinilos;//
 //let mediaPrecioVinilos = gastoTotal / totalVinilos;//
 
-//let maisCaro;//
-//let maisBarato;//
-
 while (gastoTotal <= orçamento) {
-     
+    nomeVinilo = prompt('Digite o nome do vinilo')
+    valorVinilo = Number(prompt('Digite o valor do vinilo'));
+    gastoTotal = (gastoTotal + valorVinilo) - 1;
+    totalVinilos++
     if (gastoTotal > orçamento) {
+        alert(`Exede o orçamento`)
         break;
-    }
-   gastoTotal++
+     }
+     gastoTotal++
 }
+
+if (valorVinilo > maisCaro){
+    maisCaro = valorVinilo
+}
+if (valorVinilo < maisBarato){
+    maisBarato = valorVinilo
+}
+ 
+let valorSobrante = orçamento - gastoTotal;
+let mediaVinilo = gastoTotal / totalVinilos;
+
+
+alert(`El gasto total es ${gastoTotal}`)
+alert(`O valor que sobrou é: ${valorSobrante }`)
+alert(`A quantidade de vinilos compradas foi ${totalVinilos}`)
+alert(`A média de preço dos vinis foi: ${mediaVinilo}`)
+alert(`O vinilo mais caro foi ${maisCaro} e o mais barato foi ${maisBarato}`)
 
 
 
