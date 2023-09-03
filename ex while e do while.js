@@ -143,23 +143,23 @@ while (gastoParcial < orçamento) {
 
     if (gastoTotal > 200) {                   
         alert(`Exede o orçamento`)
-
             totalVinilos = totalVinilos - 1;
             gastoTotal = gastoTotal - valorVinilo;
-
-             // Caso o valor ultrapasse R$200, encerrar (desconsiderando o último vinil) //
         break;
      }
      
      if (valorVinilo > 0 && valorVinilo < 200) {
         maisCaro = valorVinilo;
-        //maisBarato = valorVinilo;
+        maisBarato = valorVinilo;
     }
     
-    if (valorVinilo < maisCaro){
-      maisBarato = valorVinilo
+    if (valorVinilo > maisCaro){
+        maisCaro = valorVinilo
+    }                                 // me esta tomando el ultimo valor, CORREGIRLO!!! //
+    if (valorVinilo < maisBarato){
+        maisBarato = valorVinilo
     }
-    gastoParcial++
+     gastoParcial++
 }
  
 let valorSobrante = orçamento - gastoTotal;
@@ -172,8 +172,6 @@ alert(`A média de preço dos vinis foi: ${mediaVinilo}`)
 alert(`O vinilo mais caro foi ${maisCaro} e o mais barato foi ${maisBarato}`)
 
 
-
-
 /*5) Santa Catarina é conhecida por suas quatro estações bem definidas,o que o 
 torna um estado com alta amplitude térmica (diferença entre
 a maior e a menor temperatura, registrada em um período). O INMET,
@@ -184,16 +182,21 @@ semanal, mostrando os resultados ao final. Exemplo: Digitar o nome da cidade
 ou estado, perguntar para os cinco dias da semana a maior temperatura do dia
 e a menor. Mostrar as amplitudes de cada dia e a média.*/
 
-// são 5 dias que toma dados //
-// tem que looper 5 veces os dados que entra no prompt(dia 1, dia 2...)
-/*Digitar o nome da cidade
-ou estado, perguntar para os cinco dias da semana a maior temperatura do dia
-e a menor.*/
-
-let mediaAmplitude;  // soma de as 5 medições semanais / 5 //
-
-// temp menor , temp maior,  media, para cada dia //
-
+let cidade = prompt('Digite o nome da cidade');
+let tempMaior;
+let tempMenor;
+let somaAmplitude = 0;
+let mediaAmplitude = 0;
+                                        // ok resolvido
+for(i = 0; i < 5; i++) {
+tempMaior = Number(prompt('Digite a Maior temperatura'));
+tempMenor = Number(prompt('Digite a Menor temperatura'));
+let amplitude = tempMaior - tempMenor;
+alert( `A amplitude diária: ${amplitude} graus celsius`);
+somaAmplitude = somaAmplitude + amplitude;
+}
+mediaAmplitude = somaAmplitude / 5;
+alert(`A temperatura media semanal foi ${mediaAmplitude}`)
 
 
 
