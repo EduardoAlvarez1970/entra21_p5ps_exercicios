@@ -198,20 +198,30 @@ somaAmplitude = somaAmplitude + amplitude;
 mediaAmplitude = somaAmplitude / 5;
 alert(`A temperatura media semanal foi ${mediaAmplitude}`)
 
-
-
-
-
-
 /*6) SCRUM é uma metodologia ágil de gerenciamento de projetos muito utilizada
 na área da tecnologia. Dentro do SCRUM, o planejamento é realizado através de
 'sprints' que normalmente variam de 15 a 30 dias. Criar um programa onde o
 usuário deve digitar o tempo total do projeto em dias e o período das sprints.
 Após calculado o número de sprints (média), arredondando o número para baixo,
 cadastrar para cada sprint um título e um objetivo.*/
+let tempoTotal = Number(prompt('Digite o tempo total do projeto em dias'));
+let periodoSprints = Number(prompt('Digite o período das Sprints (15 ou 30 dias)'));
+let titulo;
+let objetivo;
 
+let cantidadeSprints = Math.floor(tempoTotal / periodoSprints);
 
+alert(`A cantidade de sprints sera de ${cantidadeSprints}`)          /// ok
 
+while(cantidadeSprints > 0) {
+
+    titulo = prompt('Defina o nome do projeto');
+    objetivo = prompt('Defina o objetivo do projeto');
+    
+console.log(`Projeto: ${titulo}, objetivo: ${objetivo}`)
+
+    cantidadeSprints--;
+}
 
 /*7) Em jogos de tabuleiro do gênero RPG, um dos dados que pode ser utilizado é 
 o dado D20. Esse dado possui 20 faces ou "lados" com valores de 1 a 20. Criar
