@@ -238,8 +238,15 @@ let jugada;
 let contador1;
 let qtdJogadas = 0;
 let pontuação = 0; 
+let jogador = 0;
+
 
 for (contador1 = 0; contador1 < numeroJogadores; contador1++) {
+
+    jogador = jogador + 1;
+
+    alert(`Joga o jogador ${jogador}`);
+    
 
     while(qtdJogadas < 4) {
 
@@ -250,9 +257,9 @@ for (contador1 = 0; contador1 < numeroJogadores; contador1++) {
     contador1 == contador1 +1;
     }
     qtdJogadas++;               /// ESTA CASI BIEN SOLO QUE ME DA EL VALOR DE 1 SOLO JUGADOR
+  }
 
-   
- }
+ 
   
  alert(`Pontuação do jogador ${contador1 + 1} = ${pontuação}`);  // me esta quedando mal el loop
 
@@ -267,10 +274,21 @@ for (contador1 = 0; contador1 < numeroJogadores; contador1++) {
 
 
 
+
+
+
 /*8) Na maioria das linguagens de programação, é possível contar caracteres
 de uma string (palavra, frase, etc). Criar um sistema no qual o usuário 
 digite 5 palavras e ao final mostre o tamanho em número de caracteres,
 de cada uma delas. (Pesquisar sobre o comando length, para solução).*/
+
+
+
+
+
+
+
+
 
 
 
