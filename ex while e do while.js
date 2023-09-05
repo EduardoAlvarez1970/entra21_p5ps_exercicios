@@ -280,6 +280,11 @@ for (i = 0; i < 5; i++) {
   alert(`Palavra ${palav} tem ${caracteres} caracteres`)
 }
 
+/*alert(`Palavra ${palav} tem ${caracteres} caracteres \n palavra ${palav} tem ${caracteres} caracteres \n palavra ${palav} tem ${caracteres} caracteres \n
+palavra ${palav} tem ${caracteres} caracteres \n  palavra ${palav} tem ${caracteres} caracteres`)*/
+
+
+
 /*9) Um determinado restaurante trabalha com limite de lotação de 50 
 pessoas. Porém, mesmo com esse limite, o restaurante pode encerrar
 seu atendimento antes do horário por falta de insumos para produção
@@ -288,3 +293,22 @@ de pessoas que chegam ao restaurante (repetidamente) e se os insumos
 estão "ok" ou "insuficientes". Caso alguma das duas possibilidades
 aconteça, encerrar o programa e mostrar ao final o motivo do encerramento 
 (atingiu limite de pessoa ou faltaram insumos).*/
+
+let limitePessoas = 50;
+let clientes;
+let somaClientes = 0;
+let insumos;
+
+for(i = 0; i < limitePessoas; i++) {
+      clientes = Number(prompt('Digite quantos clientes chegam ao restaurant'));
+      insumos = prompt('Se tem insumos, digite OK, no contrario digite INSUFUCIENTES')
+      somaClientes = somaClientes + clientes;
+
+      if(somaClientes > 50){                               // ok!!!
+      alert("atingiu limite de pessoas");
+      break;
+      } else if (insumos == 'insuficientes') {
+        alert("faltaram insumos");
+        break;
+      }
+    } 
