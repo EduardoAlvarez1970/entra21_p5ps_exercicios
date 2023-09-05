@@ -204,6 +204,7 @@ na área da tecnologia. Dentro do SCRUM, o planejamento é realizado através de
 usuário deve digitar o tempo total do projeto em dias e o período das sprints.
 Após calculado o número de sprints (média), arredondando o número para baixo,
 cadastrar para cada sprint um título e um objetivo.*/
+
 let tempoTotal = Number(prompt('Digite o tempo total do projeto em dias'));
 let periodoSprints = Number(prompt('Digite o período das Sprints (15 ou 30 dias)'));
 let titulo;
@@ -246,32 +247,24 @@ for (contador1 = 0; contador1 < numeroJogadores; contador1++) {
     jogador = jogador + 1;
 
     alert(`Joga o jogador ${jogador}`);
-    
+                                                    // ok !!
+      while(qtdJogadas < 4) {
 
-    while(qtdJogadas < 4) {
+        jugada = Number(prompt('Digite um valor de 1 ao 20'));
 
-    jugada = Number(prompt('Digite um valor de 1 ao 20'));
-
-    if(qtdJogadas !== 0 && qtdJogadas !== 3) {
-    pontuação = pontuação + jugada;
-    contador1 == contador1 +1;
-    }
-    qtdJogadas++;               /// ESTA CASI BIEN SOLO QUE ME DA EL VALOR DE 1 SOLO JUGADOR
-  }
-
- 
+         if(qtdJogadas !== 0 && qtdJogadas !== 3) {
+            pontuação = pontuação + jugada;
+            contador1 == contador1 +1;
+          }
+      qtdJogadas++;             
+      }
   
- alert(`Pontuação do jogador ${contador1 + 1} = ${pontuação}`);  // me esta quedando mal el loop
+    alert(`Pontuação do jogador ${contador1 + 1} = ${pontuação}`);
+
+ qtdJogadas = 0;
+ pontuação = 0;
 
 }
-
-
-
-
-
-
-
-
 
 
 
