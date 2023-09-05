@@ -266,25 +266,19 @@ for (contador1 = 0; contador1 < numeroJogadores; contador1++) {
 
 }
 
-
-
-
-
 /*8) Na maioria das linguagens de programação, é possível contar caracteres
 de uma string (palavra, frase, etc). Criar um sistema no qual o usuário 
 digite 5 palavras e ao final mostre o tamanho em número de caracteres,
 de cada uma delas. (Pesquisar sobre o comando length, para solução).*/
 
+let palav;
+let caracteres;                                            // ok !!!
 
-
-
-
-
-
-
-
-
-
+for (i = 0; i < 5; i++) {
+  palav = prompt('Digite uma palavra');
+  caracteres = palav.length;
+  alert(`Palavra ${palav} tem ${caracteres} caracteres`)
+}
 
 /*9) Um determinado restaurante trabalha com limite de lotação de 50 
 pessoas. Porém, mesmo com esse limite, o restaurante pode encerrar
