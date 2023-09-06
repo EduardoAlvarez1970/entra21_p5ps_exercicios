@@ -8,15 +8,13 @@ chamadas passando diferentes valores de parâmetros):
 - Terreno mansão: largura: 100m / profundidade: 100m
 - Terreno comercial: largura: 40m / profundidade: 40m*/
 
-
-
 function calculoArea (largura, profundidade) {
     return largura * profundidade;
 }
 
 let areaPadrão = calculoArea(50, 40)
 alert(`Area padrão e: ${areaPadrão}`)
-
+                                                   // ok
 
 let areaSobrado = calculoArea(30, 40)
 alert(`Area sobrado e: ${areaSobrado}`)
@@ -27,25 +25,27 @@ alert(`Area mansão e: ${areaMansão}`)
 let areaComercial = calculoArea(40, 40)
 alert(`Area comercial e: ${areaComercial}`)
 
+
 /*A partir da função de área retangular criada anteriormente, crie uma função que calcula
 a área de um triangulo, a qual deve receber um valor de base e altura como argumento,
 calcular a área pela função área e divide o resultado por 2 para ter o retorno correto.*/
 
-let largura = Number(prompt('Digite a base'))
-let profundidade = Number(prompt('Digite a altura'))
-
-function calculoArea (largura, profundidade) {
+function calculoArearetangular (largura, profundidade) {
     return largura * profundidade;
 }
 
+let base = Number(prompt('Digite a base do triangulo'))
+let altura = Number(prompt('Digite a altura do triangulo'))
 
-function areaTriangulo () {
-    let areaTri = calculoArea (largura, profundidade) /2;
-    return areaTri
+                                                                      // ok
+function areaTriangulo (x, a) {
+
+    let area = calculoArearetangular(x, a) / 2;
+
+    return area;
 }
-
+ 
 let areaTri = areaTriangulo(base, altura)
-
 alert(`A area do triangulo e ${areaTri}`)
 
 
@@ -53,25 +53,7 @@ alert(`A area do triangulo e ${areaTri}`)
 intervalo que o usuário informar. Utilize uma abordagem de repetição com for ou while.*/
 
 
-let menor = Number(prompt('Digite o primer numero'))
-let maior = Number(prompt('Digite o segundo numero'))
-let primo = true;
-let quantidade = 0;
 
-for(i = menor; i < maior; menor++) {
-    if (maior % menor == 0) {
-        primo = false
-    } else primo
-    
-    if(primo == true) {
-        quantidade++
-    }
-}
- 
-console.log(quantidade)
-
-
-alert(`Entre ${menor} e ${maior} tem ${quantidade} numeros primos`)
 
 
 
@@ -80,6 +62,25 @@ alert(`Entre ${menor} e ${maior} tem ${quantidade} numeros primos`)
 
 /*Utilizando funções, fazer um sistema que receba um número e retorne se ele é par ou
 ímpar.*/
+let recebeNum = Number(prompt('Digite um numero'));
+
+
+
+
+function esPar(recebeNum) {
+
+    if (recebeNum % 2 == 0) {
+
+    alert("Ele e par") 
+
+    } else {
+
+    alert("Ele é impar") 
+
+    }
+}
+
+
 
 
 
