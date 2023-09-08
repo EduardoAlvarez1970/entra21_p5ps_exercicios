@@ -36,7 +36,7 @@ while (contador <= numero) {
         primo = false
       }
     
-    if(contador > 1 && contador < numero) {     //     ok !!! 
+    if(contador > 1 && contador < numero) { 
         
       if (numero % contador == 0)
         primo = false
@@ -49,40 +49,39 @@ if(primo) {
     alert("E primo")
   } else alert("nao e primo")
 
-alert(`O contador iterou ${contador} vezes`)
-
 /*Depois implemente um laço de repetição para solicitar cinco números inteiros e mostre
 na tela se são primos ou não.*/
 
 let counter = 0;
 while (counter < 5) {
 
-  let numero = Number(prompt('digite um numero'))
-  let primo = true;
-  let contador = 0;
+    let numero = Number(prompt('digite um numero'))
+    let primo = true;
+    let contador = 0;
 
-while (contador <= numero) {
+    while (contador <= numero) {
 
-  if (numero == 0 || numero == 1) {
-      primo = false
-    }                                        // ok !!   
+        if (numero == 0 || numero == 1) {
+             primo = false
+        }                                        
   
-  if(contador > 1 && contador < numero) {
+        while(contador > 1 && contador < numero) {
       
-    if (numero % contador == 0)
-      primo = false
-  }
+           if (numero % contador == 0) {
+              primo = false
+           }
+           contador++ 
+        }
   
-contador++               
-} 
+      contador++               
+    } 
 
-if(primo) {
-  alert("E primo")
-} else alert("nao e primo")
+      if(primo) {
+       alert("E primo")
+      } else alert("nao e primo")
 
-counter++
+  counter++
 }
-
 
 /*3) Faça um programa que gera uma lista dos números primos existentes entre 1 e um 
 número inteiro digitado pelo usuário.*/
@@ -92,24 +91,25 @@ let numeroFinal = Number(prompt("Digite um número para criação da lista : "))
 let numeroAtual = 2;
 
 while (numeroAtual <= numeroFinal) {
-    let ehPrimo = true;
-    
-    let divisor = 2                              //  ok !!
 
- do {
-  if (numeroAtual % divisor === 0) {
-    ehPrimo = false;
-    break;
-  }
-  divisor++
-}
-while (divisor <= numeroAtual / 2);
+      let ehPrimo = true;
+      let divisor = 2                              
 
-if (ehPrimo) {
-    alert (`Esses número são primos : ${numeroAtual}`)
-}
+      do {
+        if (numeroAtual % divisor === 0) {
+            ehPrimo = false;
+            break;
+        }
+        divisor++
+      }
 
-numeroAtual++
+    while (divisor <= numeroAtual / 2);
+
+        if (ehPrimo) {
+           alert (`Esses número são primos : ${numeroAtual}`)
+        }
+
+  numeroAtual++
 }
 
 /*4) Você é um colecionador de vinis e resolveu ir ao sebo para comprar alguns vinis
@@ -148,29 +148,24 @@ while (gastoParcial < orçamento) {
         break;
      }
      
-     if (valorVinilo > 0 && valorVinilo < 200) {
-        maisCaro = valorVinilo;
-        maisBarato = valorVinilo;
-    }
-    
     if (valorVinilo > maisCaro){
         maisCaro = valorVinilo
-    }                                 // me esta tomando el ultimo valor, CORREGIRLO!!! //
-    if (valorVinilo < maisBarato){
+    }                              
+    if (valorVinilo < maisCaro && valorVinilo < maisBarato){
         maisBarato = valorVinilo
     }
+
      gastoParcial++
 }
  
 let valorSobrante = orçamento - gastoTotal;
-let mediaVinilo = gastoTotal / totalVinilos;
+let mediaVinilo = parseInt(gastoTotal / totalVinilos);
 
 alert(`El gasto total es ${gastoTotal}`)
 alert(`O valor que sobrou é: ${valorSobrante }`)
 alert(`A quantidade de vinilos compradas foi ${totalVinilos}`)
 alert(`A média de preço dos vinis foi: ${mediaVinilo}`)
 alert(`O vinilo mais caro foi ${maisCaro} e o mais barato foi ${maisBarato}`)
-
 
 /*5) Santa Catarina é conhecida por suas quatro estações bem definidas,o que o 
 torna um estado com alta amplitude térmica (diferença entre
@@ -187,16 +182,21 @@ let tempMaior;
 let tempMenor;
 let somaAmplitude = 0;
 let mediaAmplitude = 0;
-                                        // ok resolvido
+
 for(i = 0; i < 5; i++) {
-tempMaior = Number(prompt('Digite a Maior temperatura'));
-tempMenor = Number(prompt('Digite a Menor temperatura'));
-let amplitude = tempMaior - tempMenor;
-alert( `A amplitude diária: ${amplitude} graus celsius`);
-somaAmplitude = somaAmplitude + amplitude;
+
+   tempMaior = Number(prompt('Digite a Maior temperatura'));
+   tempMenor = Number(prompt('Digite a Menor temperatura'));
+   
+   let amplitude = tempMaior - tempMenor;
+ 
+   alert( `A amplitude diária: ${amplitude} graus celsius`);
+   
+   somaAmplitude = somaAmplitude + amplitude;
 }
+
 mediaAmplitude = somaAmplitude / 5;
-alert(`A temperatura media semanal foi ${mediaAmplitude}`)
+alert(`A temperatura media semanal en ${cidade} foi ${mediaAmplitude}`)
 
 /*6) SCRUM é uma metodologia ágil de gerenciamento de projetos muito utilizada
 na área da tecnologia. Dentro do SCRUM, o planejamento é realizado através de
@@ -212,16 +212,18 @@ let objetivo;
 
 let cantidadeSprints = Math.floor(tempoTotal / periodoSprints);
 
-alert(`A cantidade de sprints sera de ${cantidadeSprints}`)          /// ok
+alert(`A cantidade de sprints sera de ${cantidadeSprints}`) 
 
-while(cantidadeSprints > 0) {
+let x = 0;
+
+while(x < cantidadeSprints) {
 
     titulo = prompt('Defina o nome do projeto');
     objetivo = prompt('Defina o objetivo do projeto');
     
-console.log(`Projeto: ${titulo}, objetivo: ${objetivo}`)
+    console.log(`Sprint ${x + 1}. Projeto: ${titulo}, objetivo: ${objetivo}`)
 
-    cantidadeSprints--;
+    x++;
 }
 
 /*7) Em jogos de tabuleiro do gênero RPG, um dos dados que pode ser utilizado é 
@@ -241,30 +243,31 @@ let qtdJogadas = 0;
 let pontuação = 0; 
 let jogador = 0;
 
-
 for (contador1 = 0; contador1 < numeroJogadores; contador1++) {
+
+    qtdJogadas = 0;
+    pontuação = 0;
 
     jogador = jogador + 1;
 
     alert(`Joga o jogador ${jogador}`);
-                                                    // ok !!
+    
       while(qtdJogadas < 4) {
 
         jugada = Number(prompt('Digite um valor de 1 ao 20'));
 
          if(qtdJogadas !== 0 && qtdJogadas !== 3) {
             pontuação = pontuação + jugada;
-            contador1 == contador1 +1;
-          }
-      qtdJogadas++;             
-      }
-  
-    alert(`Pontuação do jogador ${contador1 + 1} = ${pontuação}`);
+            // == contador1 +1;
+         }
 
- qtdJogadas = 0;
- pontuação = 0;
+      qtdJogadas++;
 
+      } 
+     
+     alert(`Pontuação do jogador ${jogador} = ${pontuação}`);
 }
+
 
 /*8) Na maioria das linguagens de programação, é possível contar caracteres
 de uma string (palavra, frase, etc). Criar um sistema no qual o usuário 
@@ -272,7 +275,7 @@ digite 5 palavras e ao final mostre o tamanho em número de caracteres,
 de cada uma delas. (Pesquisar sobre o comando length, para solução).*/
 
 let palav;
-let caracteres;                                            // ok !!!
+let caracteres;                                         
 
 for (i = 0; i < 5; i++) {
   palav = prompt('Digite uma palavra');
@@ -280,8 +283,8 @@ for (i = 0; i < 5; i++) {
   alert(`Palavra ${palav} tem ${caracteres} caracteres`)
 }
 
-/*alert(`Palavra ${palav} tem ${caracteres} caracteres \n palavra ${palav} tem ${caracteres} caracteres \n palavra ${palav} tem ${caracteres} caracteres \n
-palavra ${palav} tem ${caracteres} caracteres \n  palavra ${palav} tem ${caracteres} caracteres`)*/
+alert(`Palavra ${palav} tem ${caracteres} caracteres \n palavra ${palav} tem ${caracteres} caracteres \n palavra ${palav} tem ${caracteres} caracteres \n
+palavra ${palav} tem ${caracteres} caracteres \n  palavra ${palav} tem ${caracteres} caracteres`)
 
 
 
@@ -304,7 +307,7 @@ for(i = 0; i < limitePessoas; i++) {
       insumos = prompt('Se tem insumos, digite OK, no contrario digite INSUFUCIENTES')
       somaClientes = somaClientes + clientes;
 
-      if(somaClientes > 50){                               // ok!!!
+      if(somaClientes > 50){                          
       alert("atingiu limite de pessoas");
       break;
       } else if (insumos == 'insuficientes') {
