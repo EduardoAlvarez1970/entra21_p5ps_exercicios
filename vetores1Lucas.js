@@ -11,9 +11,11 @@ for (i = 0; i < 10; i++) {
 
 } 
 
-alert(`A nova lista original e \n ${listaOriginal}`)
+let novaLista = listaOriginal
 
-console.log(listaOriginal);
+alert(`A nova lista e ${novaLista}`)
+
+console.log(novaLista)
 
 /*2) Desenvolva um programa que o usuário digite 10 números,
 ao final  mostre o valor do resultado do somatório da primeira
@@ -93,12 +95,24 @@ Ao final o programa deverá mostrar os dois vetores originais
 /*5) Crie um vetor de 10 números e peça para o usuário qual número
 ele deseja verificar se existe no vetor. Caso exista, o programa
 deve mostrar todos os índices que ele se encontra.*/
+    
+  let dezNumeros = [10, 5, 6, 3, 6, 66, 10, 15, 10, 6,];
 
-
-
-
-
-
+  let escolherNum = Number(prompt('Qual numero deseja verificar?'));
+              
+  let indice = dezNumeros.indexOf(escolherNum);
+              
+  let resultado = [];
+              
+    while(indice != -1) {
+              
+      resultado.push(indice)
+              
+        indice= dezNumeros.indexOf(escolherNum, indice + 1)
+    }
+              
+    alert(`O numero ${escolherNum} fica nos indices ${resultado}`)
+              
 
 /*6) Fazer um programa no qual o usuário deve digitar as três cores
 primárias (amarelo, vermelho, azul) e armazenar em um vetor.
@@ -111,23 +125,90 @@ No início dessa lista deve-se adicionar preto e no final branco.
 Perguntar “Adicionar no início da lista: ” e “Adicionar ao final da lista: ”.
 Mostrar na tela a sequência completa, incluindo preto e branco.*/
 
+let coresPrimarias;
+let coresSecundarias;
 
+let vetorCorPrimaria = [];
+let vetorCorSecundaria = [];
 
+let i = 0;
+let x = 0;
 
+while(i < 3) {
+    coresPrimarias = prompt('Digitar uma cor primarias (amarelo, vermelho, azul)');
+    vetorCorPrimaria.push(coresPrimarias);
+  i++
+}
 
+while(x < 3) {
+    coresSecundarias = prompt('Digitar uma cor secundaria (laranja, verde, violeta)');
+    vetorCorSecundaria.push(coresSecundarias)
+  x++  
+}
 
+let novoVetor = vetorCorPrimaria.concat(vetorCorSecundaria);
 
+let adicPreto = prompt('Adicionar no início da lista: preto')
+
+novoVetor.unshift(adicPreto);
+
+let adicBranco = prompt('Adicionar no início da lista: branco')
+
+novoVetor.push(adicBranco);
+
+alert(`O novo vetor de cores ficou assim:  ${novoVetor}`)
 
 /*7) Faça um programa que solicite ao usuário digitar 5 números
 e mostre a soma da multiplicação dos números pelo maior número
 digitado. (Exemplo: pegar os 4 números digitados que não são o
 maior e multiplicá-los individualmente pelo maior. Mostrar a soma das multiplicações).*/
 
+let digitar;
+
+let listaNumeros = [];
+
+for (let i = 0; i < 5; i++) {
+    digitar = Number(prompt('Digite um numero'));
+
+    if(digitar)
+
+    listaNumeros.push(digitar)
+}
+
+//console.log(listaNumeros)
+
+listaNumeros.sort(function(a, b){return a - b});
+
+//console.log(listaNumeros)
 
 
+let maiorNumero = listaNumeros.pop();
+
+//console.log(listaNumeros);
+
+//console.log(maiorNumero);
 
 
+// hasta aca ok
 
+let multiplicações = [];
+
+let ind = 0;
+
+while (ind < 4) {
+    mult = listaNumeros[ind] * maiorNumero;
+    multiplicações.push(mult)
+ 
+  ind++  
+}
+
+console.log(multiplicações)
+
+let result;
+
+result = multiplicações[0] + multiplicações[1] + multiplicações[2] + multiplicações[3];
+
+alert(`O resultado final e ${result}`)
 
 /*8) Em cidades menores, o alistamento para o exército acontece 
 esporadicamente ao longo dos anos. Criar um programa no qual
@@ -136,3 +217,36 @@ uma pergunta para cada ano. Se houve alistamento deve ser digitado
 “S” e se não houve alistamento “N”. Após digitar tudo, deve-se mostrar
 na tela o último ano que houve alistamento. Caso não tenha ocorrido alistamento,
 mostrar “Não houve alistamento nos últimos 10 anos”*/
+
+let yesOrnot;
+
+let anosArr = [];
+
+let ano = 2000;
+
+let cuenta = 0;
+
+while (cuenta < 10) {
+
+    yesOrnot = prompt(`Houve alistamento no no ${ano}? (S ou N)`);
+
+    if(yesOrnot == 'S') {
+
+        anosArr.push(ano)
+    }
+
+    ano = ano +1;
+
+    cuenta++;
+}
+
+let ultimoAno = anosArr.pop(anosArr);
+
+  if(ultimoAno === undefined) {
+
+    alert('Não houve alistamento nos últimos 10 anos')
+
+  } else {
+
+      alert(`O ultimo ano que houve alistamentos foi ${ultimoAno}`)
+    }
