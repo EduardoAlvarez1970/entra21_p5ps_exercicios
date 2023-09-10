@@ -8,19 +8,21 @@ let populaçãoA = 80000;
 let taxaAnualA = 3 / 100; 
 
 let populaçãoB = 200000;
-let taxaAnualB = 1.5 / 100;          ///     OK !!!! 
+let taxaAnualB = 1.5 / 100;      
 
 let anos = 0;
 
 while (populaçãoA < populaçãoB) {
-   populaçãoA = populaçãoA + (populaçãoA * taxaAnualA);
-   populaçãoB = populaçãoB + (populaçãoB * taxaAnualB);
+   populaçãoA = parseInt(populaçãoA + (populaçãoA * taxaAnualA));
+   populaçãoB = parseInt(populaçãoB + (populaçãoB * taxaAnualB));
    anos++;
 } 
 
 console.log("A população A tera " + ' ' + populaçãoA + ' ' + 'habitantes')
 console.log("A população B tera " + ' ' + populaçãoB + ' ' + 'habitantes')
 console.log("A população A tera " + ' ' + anos + ' ' + ' anos para alcanzar a populaçãoB')
+
+                         // RESOLVIDO
 
 /*2) Os números primos possuem várias aplicações dentro da Computação, por exemplo,
 na criptografia. Um número primo é aquele que é divisível apenas por um e por ele mesmo.
@@ -48,6 +50,8 @@ while (contador <= numero) {
 if(primo) {
     alert("E primo")
   } else alert("nao e primo")
+
+  // RESOLVIDO
 
 /*Depois implemente um laço de repetição para solicitar cinco números inteiros e mostre
 na tela se são primos ou não.*/
@@ -83,6 +87,8 @@ while (counter < 5) {
   counter++
 }
 
+// RESOLVIDO
+
 /*3) Faça um programa que gera uma lista dos números primos existentes entre 1 e um 
 número inteiro digitado pelo usuário.*/
 
@@ -111,6 +117,8 @@ while (numeroAtual <= numeroFinal) {
 
   numeroAtual++
 }
+   // RESOLVIDO
+
 
 /*4) Você é um colecionador de vinis e resolveu ir ao sebo para comprar alguns vinis
 raros. Porém, você tem apenas R$200 para gastar. Faça um programa que pergunte o 
@@ -148,6 +156,10 @@ while (gastoParcial < orçamento) {
         break;
      }
      
+     if (maisBarato == 0) {
+      maisBarato = valorVinilo
+     }
+
     if (valorVinilo > maisCaro){
         maisCaro = valorVinilo
     }                              
@@ -166,6 +178,8 @@ alert(`O valor que sobrou é: ${valorSobrante }`)
 alert(`A quantidade de vinilos compradas foi ${totalVinilos}`)
 alert(`A média de preço dos vinis foi: ${mediaVinilo}`)
 alert(`O vinilo mais caro foi ${maisCaro} e o mais barato foi ${maisBarato}`)
+     // RESOLVIDO
+
 
 /*5) Santa Catarina é conhecida por suas quatro estações bem definidas,o que o 
 torna um estado com alta amplitude térmica (diferença entre
@@ -198,6 +212,8 @@ for(i = 0; i < 5; i++) {
 mediaAmplitude = somaAmplitude / 5;
 alert(`A temperatura media semanal en ${cidade} foi ${mediaAmplitude}`)
 
+     // RESOLVIDO
+
 /*6) SCRUM é uma metodologia ágil de gerenciamento de projetos muito utilizada
 na área da tecnologia. Dentro do SCRUM, o planejamento é realizado através de
 'sprints' que normalmente variam de 15 a 30 dias. Criar um programa onde o
@@ -225,6 +241,8 @@ while(x < cantidadeSprints) {
 
     x++;
 }
+    // RESOLVIDO
+
 
 /*7) Em jogos de tabuleiro do gênero RPG, um dos dados que pode ser utilizado é 
 o dado D20. Esse dado possui 20 faces ou "lados" com valores de 1 a 20. Criar
