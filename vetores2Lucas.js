@@ -3,7 +3,6 @@ e de frete para trás, é o mesmo. Exemplos: 616, 2112 2442, 87655678.
 Criar um vetor com 6 números digitados pelo usuário e verificar se
 o vetor é palíndromo. (DESAFIO: fazer com 7 números e com palavras).*/
 
-
 let digiteSeisNumeros;
 
 let arrNum = [];
@@ -85,12 +84,6 @@ for (i = 0; i < numDoenças; i++) {
 alert(`Doençãs trasmitidas por Virus: ${virus},\n doençãs trasmitidas por bacterias: ${bacteria},\n doençãs trasmitidas por ambos: ${ambos}`)
 alert(`Lista das doençãs cadastradas: \n ${nomeDoenças}`)
 
-
-
-
-
-
-
 /*3) Faça um programa em que o usuário digite o nome de 5 produtos e 
 seus preços (“Digite o produto” / “Digite o seu preço”) e armazene
 esses nomes e preços em dois vetores separados. O programa deve calcular e mostrar:
@@ -98,6 +91,44 @@ esses nomes e preços em dois vetores separados. O programa deve calcular e most
 a) A quantidade de produtos com preço inferior a R$50;
 b) O nome dos produtos com preço de R$50 a R$100;
 c) A média dos preços dos produtos com preço superior a R$100.*/
+
+let produto = [];
+let preço = [];
+
+let a = 0;
+let b = [];
+let c = 0;
+let d = 0;
+
+for (i = 0; i < 5; i++) {
+    let askProd = prompt('Digite o produto');
+    produto.push(askProd)
+    let askPreço = Number(prompt('Digite o seu preço'));
+    preço.push(askPreço)
+
+    if (askPreço < 50) {
+        a++
+       }
+       
+       if (preço[i] >= 50 && preço[i] <= 100) {
+        b.push(produto[i])
+       }
+
+         if (askPreço > 100) {
+            d = (d + askPreço);
+            c = c + 1
+         }
+} 
+    let mediaPreços = d / c;
+
+     alert(`A quantidade de produtos com preço inferior a R$50 é: ${a}`);
+      
+
+         alert(`O nome dos produtos com preço de R$50 a R$100 e: ${b} `);
+
+
+             alert(`A média dos preços dos produtos com preço superior a R$100 e: ${mediaPreços}`)
+
 
 
 
@@ -116,6 +147,64 @@ a forma de pesquisa / lista, da forma que achar melhor.
 4- Pesquisar se um nome está cadastrado
 5- Listar todos os nomes cadastrados
 0- Sair do programa*/
+
+let vetorVazio = [];
+let opçãoCount = 1;
+
+let cadastrarNome;
+let pesquisaNome;
+let editNome;
+
+
+/*3- Editar um nome
+
+0- Sair do programa*/
+
+for (i = 0; i < opçãoCount; i++) {
+
+    opção = Number(prompt('Qual opção o usuário deseja? (1, 2, 3, 4, 5, 0)'));
+    opçãoCount++;
+
+    switch(opção) {
+        case 1:
+           cadastrarNome = prompt('Cadastre um nome') 
+           vetorVazio.push(cadastrarNome);
+           break;
+        case 2:
+            vetorVazio.shift()   
+            break;
+        case 3:
+            editNome = prompt('Editar um nome')   // me falta solo este
+            if(vetorVazio.includes(editNome)){
+
+            }
+            
+            
+            
+            break;
+        case 4:
+            pesquisaNome = prompt('Pesquisar se um nome está cadastrado')
+            if (vetorVazio.includes(pesquisaNome) == true) {
+                alert(`O nome ${pesquisaNome} está cadastrado`)
+            } else {
+                alert(`O nome ${pesquisaNome} NO está cadastrado`) 
+            }
+            break;
+        case 5:
+            alert(`Os nomes cadastrados ate agora são ${vetorVazio}`)
+            break;
+            
+        default:
+            i = i + 1000;
+            alert(`Vc saiou do programa`)   
+
+
+    }
+  }  
+  console.log(vetorVazio)
+
+  //HASTA ACA OK
+
 
 
 
