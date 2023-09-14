@@ -62,30 +62,20 @@ intervalo que o usuário informar. Utilize uma abordagem de repetição com for 
 
 /*Utilizando funções, fazer um sistema que receba um número e retorne se ele é par ou
 ímpar.*/
-let recebeNum = Number(prompt('Digite um numero'));
 
+let numero = Number(prompt('Digite um numero'));
 
+function myFunction() {
+                                           // OK
+  if (numero % 2 == 0) {
 
+  return "E par"
 
-function esPar(recebeNum) {
+} else return "E impar"
 
-    if (recebeNum % 2 == 0) {
-
-    alert("Ele e par") 
-
-    } else {
-
-    alert("Ele é impar") 
-
-    }
 }
 
-
-
-
-
-
-
+alert(myFunction())
 
 /*Criar uma calculadora utilizando funções para cada operação. O usuário deve digitar o
 primeiro número, o segundo número e em seguida a operação que deseja realizar (1 -
