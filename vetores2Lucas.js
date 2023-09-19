@@ -203,14 +203,6 @@ for (i = 0; i < opçãoCount; i++) {
   }  
   console.log(vetorVazio)
 
-  //HASTA ACA OK
-
-
-
-
-
-
-
 /*5) Uma sorveteria possui um sistema de self-service de
 sorvetes no qual o cliente pode montar seu sorvete com
 até 4 bolas (sabores). Criar um programa que simule esse sistema.
@@ -226,9 +218,83 @@ Opção 2-> “Sabor removido!”   OU   “Não existem sabores adicionados!”
 Opção 3-> “"Camada 1 - Sabor X, Camada 2 - Sabor Y, etc.”   OU   “Seu sorvete não possui sabores!”
 Opção 4-> “Pedido realizado!”   OU   “Adicione pelo menos um sabor!”*/
 
+let addSabor;
+let remSabor;
+let sabores = [];
+let opção;
+let sair = false;
 
 
 
+while (!sair) {
+
+    opção = Number(prompt('Bem-vindo a Sorveteria ENTRA 21. \n Escola a sua opcão: \n 1- Adicionar sabor \n 2- Remover sabor \n 3- Visualizar sorvete \n 4- Finalizar pedido'))
+
+    switch(opção) {
+
+        case 1:
+            addSabor = prompt('Escolha um sabor');
+            alert(`Sabor ${addSabor} adicionado!`);
+            sabores.push(addSabor);
+
+            if(sabores.length > 4) {
+                alert("Limite de sabores atingido, remova um sabor!");
+                remSabor = prompt(`Seus sabores são ${sabores} \n Escolha o sabor a remover.`);
+                alert(`Sabor ${remSabor} removido!`);
+                sabores.splice(remSabor, 1)
+            }
+            break;
+
+        case 2:
+            
+            if(sabores.length == 0) {
+                alert('Não existem sabores adicionados!')
+            } else {
+                remSabor = prompt(`Seus sabores são ${sabores} \n Escolha o sabor a remover.`);
+                const saborIndex = sabores.indexOf(remSabor);
+                if (saborIndex !== -1) {
+                    sabores.splice(saborIndex, 1);
+                    alert(`Sabor ${remSabor} removido!`);
+                } else {
+                    alert(`Sabor ${remSabor} não encontrado na lista.`);
+                }
+            } 
+            break;
+
+        case 3:
+            if(sabores.length == 0) {
+                alert('Seu sorvete não possui sabores!');
+                 addSabor = prompt('Escolha um sabor');
+                 alert(`Sabor ${addSabor} adicionado!`);
+                 sabores.push(addSabor);
+            } else {
+                    alert(`Camada 1 - Sabor ${sabores[0]},\n Camada 2 - Sabor ${sabores[1]},\n Camada 3 - Sabor ${sabores[2]},\n Camada 3 - Sabor ${sabores[3]}.`);
+                    }
+                    break;
+                      
+            case 4:
+                if(sabores.length == 4){
+                    alert('Pedido realizado');
+                    } else if(sabores.length == 0) {
+                        alert('Seu sorvete não possui sabores!');
+                        addSabor = prompt('Adicione pelo menos um sabor!');
+                        alert(`Sabor ${addSabor} adicionado!`);
+                        sabores.push(addSabor);
+                        } else {
+                            alert(`Seu sorvete tem ${i} sabores`)
+                            addSabor = prompt('Adicione pelo mais um sabor!');
+                            alert(`Sabor ${addSabor} adicionado!`);
+                            sabores.push(addSabor);
+                            }
+                        break;
+
+            default:
+                  alert('Opcão invalida \n comece novamente' );
+                sair = true;
+    }
+}
+
+console.log(sabores)
 
 
 
