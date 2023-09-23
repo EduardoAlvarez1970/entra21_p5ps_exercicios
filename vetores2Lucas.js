@@ -309,3 +309,25 @@ Bruxelas <-> Berlim = 764km
 Berlim <-> Praga = 350km
 Praga <-> Viena = 292km
 Viena <-> Budapeste = 242km*/
+
+let cidades = ['Bruxelas', 'Berlim', 'Praga', 'Viena', 'Budapeste'];
+let distancias = [764, 350, 292, 242];
+
+let partida;
+let indexPartida;
+let chegada;
+let indexChegada;
+
+let distanciaTotal = 0;
+let indexDistancias;
+
+partida = prompt('Digite a cidade de partida');
+indexPartida = cidades.indexOf(partida)
+chegada = prompt('Digite a cidade de chegada');
+indexChegada = cidades.indexOf(chegada)
+
+for (let i = indexPartida; i < indexChegada; i++) {
+    distanciaTotal += distancias[i];
+  }
+    
+alert(`A distancia entre ${partida} e ${chegada} é de ${distanciaTotal} km`);
