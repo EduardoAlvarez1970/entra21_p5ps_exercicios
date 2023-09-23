@@ -116,10 +116,10 @@ for (i = 0; i < 5; i++) {
 
          if (askPreço > 100) {
             d = (d + askPreço);
-            c = c + 1
+            c = c + 1;
          }
 } 
-    let mediaPreços = d / c;
+    let mediaPreços = c > 0 ?d / c : 0;
 
      alert(`A quantidade de produtos com preço inferior a R$50 é: ${a}`);
       
@@ -128,12 +128,6 @@ for (i = 0; i < 5; i++) {
 
 
              alert(`A média dos preços dos produtos com preço superior a R$100 e: ${mediaPreços}`)
-
-
-
-
-
-
 
 /*4) Faça um programa que crie um vetor vazio. Esse programa deve
 perguntar qual opção o usuário deseja (1, 2, 3, 4, 5, 0) e as 
@@ -149,37 +143,42 @@ a forma de pesquisa / lista, da forma que achar melhor.
 0- Sair do programa*/
 
 let vetorVazio = [];
-let opçãoCount = 1;
+let opção = -1;
 
 let cadastrarNome;
 let pesquisaNome;
+let excluir;
 let editNome;
+let index;
+let indexExcluir;
 
+while (opção !== 0) {
 
-/*3- Editar um nome
-
-0- Sair do programa*/
-
-for (i = 0; i < opçãoCount; i++) {
-
-    opção = Number(prompt('Qual opção o usuário deseja? (1, 2, 3, 4, 5, 0)'));
-    opçãoCount++;
-
+    opção = Number(prompt('Qual opção o usuário deseja?\n 1- Cadastrar nome \n2- Excluir um nome \n3- Editar um nome\n4- Pesquisar se um nome está cadastrado\n5- Listar todos os nomes cadastrados\n0- Sair do programa'));
+    
     switch(opção) {
         case 1:
            cadastrarNome = prompt('Cadastre um nome') 
            vetorVazio.push(cadastrarNome);
            break;
         case 2:
-            vetorVazio.shift()   
+            excluir = prompt('Digite o nome a excluir')
+            indexExcluir = vetorVazio.indexOf(excluir)
+            if(vetorVazio.includes(excluir)) {
+                vetorVazio.splice(indexExcluir,1)  
+            } else {
+                alert ('O nome digitado não pertenece na lista')
+              } 
             break;
         case 3:
-            editNome = prompt('Editar um nome')   // me falta solo este
+                editNome = prompt(`Editar um nome: ${vetorVazio}`) 
+                index = vetorVazio.indexOf(editNome);
             if(vetorVazio.includes(editNome)){
-
+                novoNome = prompt('Digite o novo nome a incluir na lista');
+                vetorVazio.splice(index, 1, novoNome);
+            } else {
+                alert ('O nome digitado não pertenece na lista')
             }
-            
-            
             
             break;
         case 4:
@@ -193,13 +192,13 @@ for (i = 0; i < opçãoCount; i++) {
         case 5:
             alert(`Os nomes cadastrados ate agora são ${vetorVazio}`)
             break;
+        case 0: 
+         alert ('Você escolhe sair do programa')
+         break;   
             
         default:
-            i = i + 1000;
-            alert(`Vc saiou do programa`)   
-
-
-    }
+            alert(`Digite uma opção entre 1 e 4 ou se deseja sair digite 0 !!`)
+        }
   }  
   console.log(vetorVazio)
 
@@ -224,30 +223,30 @@ let sabores = [];
 let opção;
 let sair = false;
 
-
-
 while (!sair) {
-
     opção = Number(prompt('Bem-vindo a Sorveteria ENTRA 21. \n Escola a sua opcão: \n 1- Adicionar sabor \n 2- Remover sabor \n 3- Visualizar sorvete \n 4- Finalizar pedido'))
 
     switch(opção) {
-
         case 1:
             addSabor = prompt('Escolha um sabor');
             alert(`Sabor ${addSabor} adicionado!`);
             sabores.push(addSabor);
 
-            if(sabores.length > 4) {
+            if (sabores.length > 4) {
                 alert("Limite de sabores atingido, remova um sabor!");
                 remSabor = prompt(`Seus sabores são ${sabores} \n Escolha o sabor a remover.`);
-                alert(`Sabor ${remSabor} removido!`);
-                sabores.splice(remSabor, 1)
+                const saborIndex = sabores.indexOf(remSabor);
+                if (saborIndex !== -1) {
+                    sabores.splice(saborIndex, 1);
+                    alert(`Sabor ${remSabor} removido!`);
+                } else {
+                    alert(`Sabor ${remSabor} não encontrado na lista.`);
+                }
             }
             break;
 
         case 2:
-            
-            if(sabores.length == 0) {
+            if (sabores.length == 0) {
                 alert('Não existem sabores adicionados!')
             } else {
                 remSabor = prompt(`Seus sabores são ${sabores} \n Escolha o sabor a remover.`);
@@ -262,41 +261,41 @@ while (!sair) {
             break;
 
         case 3:
-            if(sabores.length == 0) {
+            if (sabores.length == 0) {
                 alert('Seu sorvete não possui sabores!');
-                 addSabor = prompt('Escolha um sabor');
-                 alert(`Sabor ${addSabor} adicionado!`);
-                 sabores.push(addSabor);
             } else {
-                    alert(`Camada 1 - Sabor ${sabores[0]},\n Camada 2 - Sabor ${sabores[1]},\n Camada 3 - Sabor ${sabores[2]},\n Camada 3 - Sabor ${sabores[3]}.`);
-                    }
-                    break;
-                      
-            case 4:
-                if(sabores.length == 4){
-                    alert('Pedido realizado');
-                    } else if(sabores.length == 0) {
-                        alert('Seu sorvete não possui sabores!');
-                        addSabor = prompt('Adicione pelo menos um sabor!');
-                        alert(`Sabor ${addSabor} adicionado!`);
-                        sabores.push(addSabor);
-                        } else {
-                            alert(`Seu sorvete tem ${i} sabores`)
-                            addSabor = prompt('Adicione pelo mais um sabor!');
-                            alert(`Sabor ${addSabor} adicionado!`);
-                            sabores.push(addSabor);
-                            }
-                        break;
+                let mensagem = 'Seu sorvete tem os seguintes sabores:\n';
+                for (let i = 0; i < sabores.length; i++) {
+                    mensagem += `Camada ${i + 1} - Sabor ${sabores[i]}\n`;
+                }
+                alert(mensagem);
+            }
+            break;
 
-            default:
-                  alert('Opcão invalida \n comece novamente' );
-                sair = true;
+        case 4:
+            if (sabores.length == 4) {
+                alert('Pedido realizado');
+            } else if (sabores.length == 0) {
+                alert('Seu sorvete não possui sabores!');
+                addSabor = prompt('Adicione pelo menos um sabor!');
+                alert(`Sabor ${addSabor} adicionado!`);
+                sabores.push(addSabor);
+            } else {
+                alert(`Seu sorvete tem ${sabores.length} sabores`);
+                addSabor = prompt('Adicione pelo mais um sabor!');
+                alert(`Sabor ${addSabor} adicionado!`);
+                sabores.push(addSabor);
+            }
+            break;
+
+        default:
+            alert('Opcão inválida. Tente novamente.');
+            sair = true;
+            break;
     }
 }
 
-console.log(sabores)
-
-
+console.log(sabores);
 
 /*6) Você está fazendo um mochilão pela Europa e precisa 
 qual a distância que vai percorrer em determinada viagem ou
