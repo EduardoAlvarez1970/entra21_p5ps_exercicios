@@ -52,11 +52,44 @@ alert(`A area do triangulo e ${areaTri}`)
 /*Crie uma função que determine quantos números primos existem dentro de um
 intervalo que o usuário informar. Utilize uma abordagem de repetição com for ou while.*/
 
+let numeroInicial = Number(prompt("Digite o primeiro numero"))
+let numeroFinal = Number(prompt("Digite o numero final"))
+let contagem = 0
+let lista = []
+// Rodando um loop do inicial até o final
+while(numeroInicial <= numeroFinal){
+  // Chamar uma função passando o numeroInicial que retorne se é primo ou não
+  let verificacao = verificaPrimo(numeroInicial)
+  if(verificacao == true){
+    contagem++
+    lista.push(numeroInicial)
+  }
+  numeroInicial++
+}
 
+console.log(contagem)
+console.log(lista)
 
+function verificaPrimo(numero){
+  console.log(`Verificando o numero ${numero}`)
+  let primo = true
+  // Dividir o numero por 2, 3, 4... até antes dele mesmo
+  // Se o resto der 0 em algum caso, não é primo
+  contador = 2
+  while(numero > contador){
+//     console.log(`O contador é ${contador}`)
+    if(numero % contador == 0){
+      // numero não primo
+      primo = false
+    } 
+    contador++
+  }
+//   console.log(`Resultado da verificação do numero ${numero}: ${primo}`)
+  return primo 
+}
 
-
-
+// REVISARLO !!! ESTA MAL PORQUE EN LA LISTA 0 Y 1 DAN COMO PRIMOS !!!! 
+// HABRIA QUE CREAR UNA CONDICION QUE ELIMINE TAMBIEN DE MOVIDA EL O Y E 1
 
 
 
