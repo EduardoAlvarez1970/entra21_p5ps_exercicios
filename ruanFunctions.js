@@ -84,12 +84,7 @@ Digite o primeiro número:
 Digite o segundo número:
 Qual operação deseja realizar? 1 – Soma 2 – Subtração 3 – Multiplicação 4 - Divisão*/
 
-/*Criar uma calculadora utilizando funções para cada operação. O usuário deve digitar o
-primeiro número, o segundo número e em seguida a operação que deseja realizar (1 -
-Soma 2 - Subtração 3 - Multiplicação 4 - Divisão). O resultado deve ser mostrado na tela.
-Digite o primeiro número:
-Digite o segundo número:
-Qual operação deseja realizar? 1 – Soma 2 – Subtração 3 – Multiplicação 4 - Divisão*/
+
 
 function soma(a, b) {
     return a + b;
